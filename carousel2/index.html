@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/swiper.min.js"></script>
+  <style>
+    .swiper-container{
+      width: 790px;
+      height: 340px;
+    }
+    .swiper-slide {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>swiper插件实现轮播图</h2>
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="javascript:;"><img src="img/carousel1.jpg"></a></div>
+          <div class="swiper-slide"><a href="javascript:;"><img src="img/carousel2.jpg"></a></div>
+          <div class="swiper-slide"><a href="javascript:;"><img src="img/carousel3.jpg"></a></div>
+          <div class="swiper-slide"><a href="javascript:;"><img src="img/carousel4.jpg"></a></div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+      
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      
+      <!-- 如果需要滚动条 -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+  </div>
+  
+  <script>        
+    var mySwiper = new Swiper ('.swiper-container', {
+      direction: 'horizontal', // 滚动条方向
+      // 自动播放
+      autoplay:1000,
+      loop: true, // 循环模式选项
+      
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable:true
+      },
+      // 点击分页器是否切换到对应的图片 是 true 否 false
+      // paginationClickable:true,
+      
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // 如果需要滚动条
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      // },
+
+    // 用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+    // 如果设置为false，用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。
+    // 操作包括触碰，拖动，点击pagination等。
+    autoplayDisableOnInteraction:false
+    })        
+  </script>
+</body>
+</html>
