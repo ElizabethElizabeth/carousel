@@ -1,0 +1,83 @@
+*{
+  margin: 0;padding: 0;
+}
+body img{
+  width: 800px;
+}
+#main{
+  width:800px;
+  margin:0 auto;
+}
+#lunbo{
+  width: 800px;
+  position: relative; 
+  overflow:hidden;
+}
+ul:nth-of-type(1){
+  /* width: 800px; */
+  margin-left:0px;
+  list-style: none;
+  display: flex;
+  /* display: flex; */
+  /* overflow:hidden; */
+}
+#ul-imgs.transition{
+  transition:all .5s linear;
+}
+#ul-imgs>li{
+  width:800px;
+  float:left;
+}
+#left{
+  width: 45px;
+  height: 250px;
+  opacity: 0.7;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 70px;
+  color: #fff;
+  line-height: 430.77px;
+}
+#right{
+  width: 45px;
+  height: 250px;
+  opacity: 0.7;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 70px;
+  color: #fff;
+  line-height: 430.77px;
+}
+#idxs{
+  width:100px;
+  display: flex;
+  position: absolute;
+  bottom: 3px;
+  left: 350px;
+  list-style: none;
+  opacity: 0.79;
+}
+#idxs li{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #fff; 
+  margin: 2px 2px;
+  text-align: center;
+  line-height: 20px;
+  cursor:pointer;
+}
+#idxs>li.active{
+  /* opacity: 1; */
+  background: #0aa;
+}
+#idxs:hover{
+  cursor: pointer;
+}
+#left:hover,#right:hover{
+  cursor: pointer;
+  font-size: 90px;
+  /* color: #fff; */
+}
