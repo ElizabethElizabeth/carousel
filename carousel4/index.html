@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #slider{
+      width:700px; height:400px;
+      position:relative;
+      border:1px solid #555;
+      margin: auto;
+    }
+    #slider>img{
+    	display: block;
+    	width: 700px;
+    	height: 400px;
+      position:absolute; top:0px; left:0px;
+      opacity:0;
+      transition:all .4s linear;
+    }
+    #slider>img.show{  opacity:1;  }
+    #left{
+      width: 45px;
+      height: 250px;
+      opacity: 0.7;
+      position: absolute;
+      top: -75px;
+      left: 0px;
+      font-size: 70px;
+      color: #fff;
+      line-height: 400px;
+    }
+    #right{
+      width: 45px;
+      height: 250px;
+      opacity: 0.7;
+      position: absolute;
+      top: -75px;
+      right: 10px;
+      font-size: 70px;
+      color: #fff;
+      line-height: 400px;
+    }
+    #left:hover,#right:hover{
+      cursor: pointer;
+      font-size: 90px;
+      /* color: #fff; */
+    }
+  </style>
+</head>
+<body>
+<h2>jquery实现轮播图</h2>
+<div id="slider">
+  <img src="img/carousel1.jpg"  class="show"/>
+  <img src="img/carousel2.jpg"/>
+  <img src="img/carousel3.jpg"/>
+  <img src="img/carousel4.jpg"/>
+  <p id="left"><span>&lt;</span></p>
+  <p id="right"><span>&gt;</span></p>
+</div>
+<script>
+	//先定义计时器函数
+      function task(){
+      	//获取选择器下的类show（有show的选择器为显示）
+        var show=document.querySelector(
+          "#slider>img.show"
+        ) ;
+        //先清空选择器
+        show.className="";
+        //返回第一张需要判断是不是最后一张了
+        if(show.nextElementSibling!==null)
+        	//给他的弟弟的类选择器为show，
+          show.nextElementSibling.className="show";
+        else//否则返回给第一张
+          show.parentNode.children[0].className="show"
+      }
+      var n=setInterval(task,1000);
+      var div=document.getElementById("slider");
+      div.onmouseover=function(){
+        clearInterval(n);
+      }
+      div.onmouseout=function(){
+        n=setInterval(task,2000);
+      }    
+</script>
+</body>
+</html>
